@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى أجمل إنسانة في الدنيا ✨</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Reem+Kufi:wght@600;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0614;
+            --card-bg: rgba(255, 255, 255, 0.06);
+            --card-border: rgba(255, 182, 193, 0.25);
+            --primary-color: #ff6584;
+            --accent-color: #ff8fb1;
+            --gold-color: #ffd700;
+            --text-color: #ffffff;
+            --text-sub: #f3d1dc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 15% 15%, rgba(255, 101, 132, 0.2) 0px, transparent 40%),
+                radial-gradient(at 85% 85%, rgba(147, 112, 219, 0.2) 0px, transparent 40%),
+                radial-gradient(at 50% 50%, rgba(255, 143, 177, 0.1) 0px, transparent 60%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* خلفية النجوم المتحركة */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* قلب أعلى اليسار مكتوب داخله شوشو */
+        .top-left-heart {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 0 12px rgba(255, 101, 132, 0.7));
+            animation: heartbeatTop 1.6s infinite ease-in-out;
+            cursor: pointer;
+        }
+
+        .top-left-heart i {
+            font-size: 85px;
+            color: var(--primary-color);
+            position: absolute;
+        }
+
+        .top-left-heart span {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            font-family: 'Aref Ruqaa', 'Reem Kufi', cursive;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            margin-top: -6px;
+        }
+
+        @keyframes heartbeatTop {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.08); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.08); }
+            70% { transform: scale(1); }
+        }
+
+        /* زر تشغيل الصوت العلوي */
+        .audio-control {
+            position: fixed;
+            top: 25px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .audio-control:hover {
+            background: rgba(255, 101, 132, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* الهيدر والعناوين */
+        header {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 35px;
+            z-index: 1;
+        }
+
+        .main-heart {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: heartBeat 1.3s infinite ease-in-out;
+            filter: drop-shadow(0 0 20px rgba(255, 101, 132, 0.8));
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.2); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.2); }
+            70% { transform: scale(1); }
+        }
+
+        h1 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #ffffff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 101, 132, 0.4);
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            width: 100%;
+            max-width: 650px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* البطاقات التفاعلية */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 22px 28px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 101, 132, 0.6);
+            box-shadow: 0 15px 40px 0 rgba(255, 101, 132, 0.25);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-header-main {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 101, 132, 0.4);
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .arrow-icon {
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .card.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        .card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, margin-top 0.5s ease, opacity 0.4s ease;
+            color: var(--text-sub);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            opacity: 0;
+        }
+
+        .card.active .card-body {
+            max-height: 300px;
+            margin-top: 18px;
+            opacity: 1;
+        }
+
+        /* صندوق الرسالة السرية */
+        .secret-box {
+            background: linear-gradient(135deg, rgba(255, 101, 132, 0.15), rgba(147, 112, 219, 0.15));
+            border: 2px dashed rgba(255, 101, 132, 0.5);
+            text-align: center;
+            padding: 30px;
+            border-radius: 24px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .secret-box:hover {
+            background: linear-gradient(135deg, rgba(255, 101, 132, 0.25), rgba(147, 112, 219, 0.25));
+            transform: scale(1.02);
+        }
+
+        .secret-icon {
+            font-size: 2.5rem;
+            color: var(--gold-color);
+            margin-bottom: 12px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .secret-content {
+            display: none;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #fff;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* الأزرار التفاعلية */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .interactive-btn {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 18px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 101, 132, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .interactive-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 101, 132, 0.6);
+        }
+
+        /* القلوب المتطايرة */
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatUp 3.5s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.8) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.4) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            margin-top: 45px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="stars"></div>
+
+    <!-- القلب العُلوي على اليسار مع اسم شوشو -->
+    <div class="top-left-heart" onclick="spawnHearts(event)">
+        <i class="fa-solid fa-heart"></i>
+        <span>شوشو</span>
+    </div>
+
+    <!-- زر التحكم بالصوت على اليمين -->
+    <div class="audio-control" onclick="toggleAudio()">
+        <i class="fa-solid fa-music" id="audioIcon"></i>
+        <span id="audioText">تشغيل الموسيقى</span>
+    </div>
+
+    <header>
+        <div class="main-heart"><i class="fa-solid fa-heart"></i></div>
+        <h1>موقع مخصص لأجمل شوشو ✨</h1>
+        <p class="subtitle">تصميم بسيط وصُنِع بحب خصيصاً ليُسعد قلبكِ ✨</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <div class="card-header-main">
+                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                    <div class="card-title">ليش أنتِ خاصة وغير عن الكل؟</div>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </div>
+            <div class="card-body">
+                لأن وجودك يضيف للدنيا لطافة وجمال خاص، وابتسامتك هي أبسط وأجمل شيء قادر يخلّي اليوم حلو بزيادة، وتفاصيلك اللطيفة ما تشبه أحد.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <div class="card-header-main">
+                    <div class="card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <div class="card-title">رسالة قصيرة من أعماق القلب</div>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </div>
+            <div class="card-body">
+                أتمنى يومك يكون مليان بالخير واللحظات اللطيفة اللي تشبهك، وخلي في بالك دائمًا إنك شخص غالي ومميز جدًا، وتستاهلين كل الأشياء الحلوة.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <div class="card-header-main">
+                    <div class="card-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <div class="card-title">أمنية يومية بسيطة</div>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </div>
+            <div class="card-body">
+                أن تبقي سعيدة ومبتسمة دائمًا، لأن ضحكتك تنوّر المكان وتترك أثر جميل ودافئ في كل لحظة وفي كل مكان.
+            </div>
+        </div>
+
+        <!-- صندوق المفاجأة السرية -->
+        <div class="secret-box" id="secretBox" onclick="openSecret()">
+            <div class="secret-icon"><i class="fa-solid fa-gift"></i></div>
+            <h3 style="color: #fff; font-size: 1.2rem;" id="secretTitle">اضغطي هنا لفتح الرسالة السرية 🎁</h3>
+            <div class="secret-content" id="secretContent">
+                "مهما كانت الأيام طويلة أو مشغولة، بتبقين أنتِ الجزء الأجمل والأنقى فيها دائمًا يا شوشو ❤️"
+            </div>
+        </div>
+
+        <!-- أزرار التفاعل -->
+        <div class="btn-group">
+            <button class="interactive-btn" onclick="spawnHearts(event)">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                إطلاق القلوب!
+            </button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>صُنع بكل حب ❤️ لشوشو</p>
+    </footer>
+
+    <!-- صوت خلفية هادئ -->
+    <audio id="bgAudio" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // إنشاء خلفية النجوم المتحركة
+        const starsContainer = document.getElementById('stars');
+        const starCount = 50;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            starsContainer.appendChild(star);
+        }
+
+        // فتح وإغلاق البطاقات
+        function toggleCard(cardElement) {
+            const isActive = cardElement.classList.contains('active');
+            
+            // إغلاق كل البطاقات الأخرى
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+
+            // التبديل للبطاقة المحددة
+            if (!isActive) {
+                cardElement.classList.add('active');
+            }
+        }
+
+        // فتح الرسالة السرية
+        function openSecret() {
+            const content = document.getElementById('secretContent');
+            const title = document.getElementById('secretTitle');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                title.innerText = 'اضغطي هنا لفتح الرسالة السرية 🎁';
+            } else {
+                content.style.display = 'block';
+                title.innerText = 'رسالتكِ الخاصة ✨';
+                spawnHearts();
+            }
+        }
+
+        // إطلاق القلوب والنجوم عند الضغط
+        function spawnHearts(event) {
+            const colors = ['#ff6584', '#ff8fb1', '#ffffff', '#ffd700', '#f3d1dc'];
+            const icons = ['fa-heart', 'fa-sparkles', 'fa-star', 'fa-smile'];
+
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('i');
+                    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                    heart.className = `fa-solid ${randomIcon} floating-heart`;
+                    
+                    const x = Math.random() * window.innerWidth;
+                    const y = window.innerHeight + 20;
+                    
+                    heart.style.left = `${x}px`;
+                    heart.style.top = `${y}px`;
+                    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    heart.style.fontSize = `${Math.random() * 22 + 16}px`;
+
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3500);
+                }, i * 40);
+            }
+        }
+
+        // تشغيل وإيقاف الصوت
+        function toggleAudio() {
+            const audio = document.getElementById('bgAudio');
+            const icon = document.getElementById('audioIcon');
+            const text = document.getElementById('audioText');
+
+            if (audio.paused) {
+                audio.play();
+                icon.className = 'fa-solid fa-volume-high';
+                text.innerText = 'إيقاف الموسيقى';
+            } else {
+                audio.pause();
+                icon.className = 'fa-solid fa-music';
+                text.innerText = 'تشغيل الموسيقى';
+            }
+        }
+    </script>
+</body>
+</html>
